@@ -1,6 +1,6 @@
 {
     "require": {
         "slim/slim"  : "*",
-        "slim/extras": "*"
+        "monolog/monolog": "1.*"
     }
 }

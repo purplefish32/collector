@@ -13,6 +13,12 @@ foreach (glob(APP_PATH . 'config/*.php') as $configFile) {
 
 $app = new \Slim\Slim();
 
+$app->container->singleton('log', function () {
+    $log = new \Monolog\Logger('collector');
+    $log->pushHandler(new \Monolog\Handler\StreamHandler('../logs/' . date('Y-m-d') . '.log', \Monolog\Logger::DEBUG));
+    return $log;
+});
+
 foreach ($config as $configKey => $configValue) {
     $app->config($configKey, $configValue);
 }

@@ -2,6 +2,8 @@
 
 $app->post('/', function () use ($app) {
 
+    $app->log->info("collector '/' route");
+
     $xml = simplexml_load_string(
         $app->request()->getBody()
     );
