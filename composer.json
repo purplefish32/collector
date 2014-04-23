@@ -2,7 +2,6 @@
     "require": {
         "slim/slim"  : "*",
         "slim/extras": "*",
-        "twig/twig"  : "*",
-        "itsgoingd/slim-facades": "dev-master"
+        "twig/twig"  : "*"
     }
 }

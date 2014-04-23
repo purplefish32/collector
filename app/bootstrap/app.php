@@ -8,7 +8,7 @@ $app->post('/', function () use ($app) {
 
     $json = json_encode($xml);
 
-    $ch = curl_init($config['meteor']['url']);
+    $ch = curl_init($app->config['meteor']['url']);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
@@ -18,5 +18,3 @@ $app->post('/', function () use ($app) {
         'Content-Length: ' . strlen($json)
     ));
 });
-
-//$app->run();
