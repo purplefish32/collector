@@ -1,6 +1,9 @@
 <?php
 
+define('VENDOR_PATH', __DIR__.'/../../vendor/');
 define('APP_PATH', __DIR__.'/../../app/');
+
+require VENDOR_PATH.'autoload.php';
 
 $config = array();
 
