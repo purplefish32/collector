@@ -24,4 +24,5 @@ $app->post('/', function () use ($app, $config) {
     ));
 
     curl_exec($ch);
+    curl_close($ch);
 });
