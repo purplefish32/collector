@@ -10,6 +10,9 @@ $app->post('/', function () use ($app) {
 
     $json = json_encode($xml);
 
+    $app->log->info("collector payload : " . $json);
+    $app->log->info("meteor URL : " . $app->config['meteor']['url']);
+
     $ch = curl_init($app->config['meteor']['url']);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
