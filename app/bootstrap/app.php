@@ -22,4 +22,6 @@ $app->post('/', function () use ($app, $config) {
         'Content-Type: application/json',
         'Content-Length: ' . strlen($json)
     ));
+
+    curl_exec($ch);
 });
