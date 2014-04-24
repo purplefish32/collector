@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/', function () use ($app) {
+$app->post('/', function () use ($app, $config) {
 
     $app->log->info("collector '/' route");
 
@@ -11,9 +11,9 @@ $app->post('/', function () use ($app) {
     $json = json_encode($xml);
 
     $app->log->info("collector payload : " . $json);
-    $app->log->info("meteor URL : " . $app->config['meteor']['url']);
+    $app->log->info("meteor URL : " . $config['meteor']['url']);
 
-    $ch = curl_init($app->config['meteor']['url']);
+    $ch = curl_init($config['meteor']['url']);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
